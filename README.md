@@ -1,6 +1,5 @@
 # annuaire project
 ## Description du projet
-
 Numérisation de l'annuaire de RAMEX
 
 - **Backend** : API REST en Django.
@@ -8,8 +7,13 @@ Numérisation de l'annuaire de RAMEX
 - **Base de données** : **PostgreSQL**
 
 ### Backend
-pip install django djangorestframework django-cors-headers python-dotenv psycopg2-binary
-- **.env à coté de manage.py**<br>
+git pull https://github.com/paterneramex/annuaire_entreprise.git<br>
+cd backend<br>
+python -m venv venv<br>
+venv\Scripts\activate<br>
+pip install django djangorestframework django-cors-headers python-dotenv psycopg2-binary<br>
+
+- **Créer un fichier.env à coté de manage.py**<br>
 DB_NAME=annuaire_db<br>
 DB_USER=your_postgre_user<br>
 DB_PASSWORD=your_postgre_password<br>
@@ -27,7 +31,7 @@ SECRET_KEY=#generate key and paste here by using [python -c "from django.core.ma
 
 - **Migrate**<br>
   python manage.py migrate
-- - if error<br>
+  - if error<br>
     del employes\migrations\*.py<br>
     del /Q employes\migrations\__pycache__\*<br>
     python manage.py makemigration employes<br>
@@ -41,9 +45,17 @@ D:\annuaire\backend>psql -U it -d annuaire_db -f data.sql
 
 - **Run server**<br>
   python manage.py runserver 0.0.0.0:8000<br>
-  test<br>
+  Tester :<br>
   localhost:8000/api/employes/<br>
   localhost:8000/api/employes/12/<br>
 
 ### FrontEnd
-- 
+#### Initialisation de React<br>
+  annuaire_entreprise>npx create-react-app frontend<br>
+  annuaire_entreprise>cd frontend<br>
+  Installer la bibliothèque axios pour simplifier(simple que fetch() de JS) l'appel vers API Django <br>
+  annuaire\frontend>npm install axios<br>
+  DJango gets data from postgre => EmployeSerializer (text -> JSON)<br>
+Axios gets the serializedJSON => Objet JS (tableau contenant des dicts)<br>
+#### frontend/src/app.js (display)
+#### frontend/src/api.js (manage toward-backend requests)
