@@ -40,11 +40,10 @@ SECRET_KEY=#generate key and paste here by using [python -c "from django.core.ma
 D:\annuaire\backend>psql -U it -d annuaire_db -f data.sql
 
 - **Run server**<br>
-  python manage.py runserver 0.0.0.0:80000<br>
+  python manage.py runserver 0.0.0.0:8000<br>
   test<br>
   localhost:8000/api/employes/<br>
   localhost:8000/api/employes/12/<br>
-  
-- 
+
 ### FrontEnd
 - 
