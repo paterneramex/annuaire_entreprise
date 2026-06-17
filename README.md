@@ -57,5 +57,6 @@ D:\annuaire\backend>psql -U it -d annuaire_db -f data.sql
   annuaire\frontend>npm install axios<br>
   DJango gets data from postgre => EmployeSerializer (text -> JSON)<br>
 Axios gets the serializedJSON => Objet JS (tableau contenant des dicts)<br>
+npm list
 #### frontend/src/app.js (display)
 #### frontend/src/api.js (manage toward-backend requests)
