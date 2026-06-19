@@ -41,7 +41,7 @@ SECRET_KEY=#generate key and paste here by using [python -c "from django.core.ma
   python manage.py createsuperuser<br><br>
 
 - **populate the database**<br>
-D:\annuaire\backend>psql -U it -d annuaire_db -f data.sql
+D:\annuaire\backend>set PGCLIENTENCODING=UTF8 && psql -U it -d annuaire_db -f data.sql <br>
 
 - **Run server**<br>
   python manage.py runserver 0.0.0.0:8000<br>
