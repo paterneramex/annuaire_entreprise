@@ -60,5 +60,6 @@ Axios gets the serializedJSON => Objet JS (tableau contenant des dicts)<br>
 npm list
 #### frontend/src/App.js (display)
 #### frontend/src/api.js (manage toward-backend requests)
-npm install -D tailwindcss postcss autoprefixer<br>
+npm install -D tailwindcss@3.4.17 postcss autoprefixer<br>
+npm list @tailwindcss/cli <br>
 npx tailwindcss init -p<br>
