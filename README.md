@@ -63,3 +63,8 @@ npm list
 npm install -D tailwindcss@3.4.17 postcss autoprefixer<br>
 npm list @tailwindcss/cli <br>
 npx tailwindcss init -p<br>
+#### configure tailwind
+- frontend/tailwind.config.js (<- point here React components) <br>
+content: ["./src/\**/*{.extension}"] ** parcourir récursivement tous les sous-dossiers, quel que soit leur niveau
+- frontend/src/index.css (<-update) <br>
+- frontend/src/App.js (<-update) <br>
