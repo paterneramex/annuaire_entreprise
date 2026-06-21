@@ -1,23 +1,43 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# ==========================================
+# 1. BACKEND (Django & Python)
+# ==========================================
+# Environnements virtuels
+.venv/
+venv/
+env/
+ENV/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Fichiers sensibles (Mots de passe, clés d'API)
+.env
 
-# testing
-/coverage
+# Fichiers Python compilés et caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
 
-# production
-/build
+# Base de données locale (au cas où vous l'utiliseriez par erreur)
+*.sqlite3
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# ==========================================
+# 2. FRONTEND (React & Node)
+# ==========================================
+# Dépendances (Le dossier le plus lourd, à ne JAMAIS push)
+node_modules/
 
+# Dossier de build (production)
+/frontend/build/
+
+# Fichiers de log d'erreurs d'npm
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# ==========================================
+# 3. SYSTÈME ET ÉDITEURS (Windows, Mac, VS Code)
+# ==========================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
