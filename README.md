@@ -11,7 +11,7 @@ git pull https://github.com/paterneramex/annuaire_entreprise.git<br>
 cd backend<br>
 python -m venv venv<br>
 venv\Scripts\activate<br>
-pip install django djangorestframework django-cors-headers python-dotenv psycopg2-binary<br>
+pip install django djangorestframework djangorestframework-simplejwt django-cors-headers python-dotenv psycopg2-binary<br>
 
 - **Créer un fichier.env à coté de manage.py**<br>
 DB_NAME=annuaire_db<br>
