@@ -41,7 +41,8 @@ SECRET_KEY=#generate key and paste here by using [python -c "from django.core.ma
   python manage.py createsuperuser<br><br>
 
 - **populate the database**<br>
-D:\annuaire\backend>psql -U it -d annuaire_db -f data.sql
+D:\annuaire\backend>psql -U it -d annuaire_db -c "TRUNCATE TABLE employes_employe RESTART IDENTITY;" <br>
+D:\annuaire\backend>set PGCLIENTENCODING=UTF8 && psql -U it -d annuaire_db -f data.sql <br>
 
 - **Run server**<br>
   python manage.py runserver 0.0.0.0:8000<br>
@@ -57,5 +58,14 @@ D:\annuaire\backend>psql -U it -d annuaire_db -f data.sql
   annuaire\frontend>npm install axios<br>
   DJango gets data from postgre => EmployeSerializer (text -> JSON)<br>
 Axios gets the serializedJSON => Objet JS (tableau contenant des dicts)<br>
-#### frontend/src/app.js (display)
+npm list
+#### frontend/src/App.js (display)
 #### frontend/src/api.js (manage toward-backend requests)
+npm install -D tailwindcss@3.4.17 postcss autoprefixer<br>
+npm list @tailwindcss/cli <br>
+npx tailwindcss init -p<br>
+#### configure tailwind
+- frontend/tailwind.config.js (<- point here React components) <br>
+content: ["./src/\**/*{.extension}"] ** parcourir récursivement tous les sous-dossiers, quel que soit leur niveau
+- frontend/src/index.css (<-update) <br>
+- frontend/src/App.js (<-update) <br>
