@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo, useRef } from 'react';
 import api from './api';
 
+<<<<<<< HEAD
 const init = { matricule: '', nom: '', prenom: '', poste: '', agence: '', telephone: '' };
 const fields = ['matricule', 'nom', 'prenom', 'poste', 'agence', 'telephone'];
 const perPageOptions = [10, 20, 50];
@@ -313,6 +314,29 @@ function App() {
       </div>
     </div>
   );
+=======
+function App(){
+	const [employes, setEmployoes] = useState([]);
+
+	useEffect(() => {
+		api.get('employes/')
+		.then(response => {
+			setEmployoes(response.data);
+		})
+		.catch(error=>console.error("no data", error));
+	}, []);
+
+	return(
+		<div>
+			<h2>Le mieux qu'on puisse faire</h2>
+			<ul>
+				{employes.map(emp =>(
+					<li key={emp.matricule}> {emp.nom} {emp.prenom} - {emp.poste} </li>
+					))}
+			</ul>
+		</div>
+		);
+>>>>>>> dc53584ad54ad99af434d315b54fddaa2fe02e62
 }
 
 export default App;
