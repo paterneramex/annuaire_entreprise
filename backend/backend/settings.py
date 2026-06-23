@@ -139,3 +139,24 @@ STATIC_URL = 'static/'
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
 ]
+
+# 1. Configuration de DRF
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ],
+}
+
+# 2. Configuration personnalisée de Simple JWT
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),  # Durée de vie du jeton d'accès
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),    # Durée de vie du jeton de rafraîchissement
+    'ROTATE_REFRESH_TOKENS': True,                  # Renouvelle le refresh token à chaque utilisation
+    'BLACKLIST_AFTER_ROTATION': True,               # Empêche la réutilisation d'un vieux refresh token
+    'AUTH_HEADER_TYPES': ('Bearer',),               # En-tête HTTP : "Authorization: Bearer <token>"
+}
