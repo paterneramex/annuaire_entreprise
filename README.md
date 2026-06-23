@@ -49,7 +49,8 @@ D:\annuaire\backend>set PGCLIENTENCODING=UTF8 && psql -U it -d annuaire_db -f da
   Tester :<br>
   localhost:8000/api/employes/<br>
   localhost:8000/api/employes/12/<br>
-
+- **Tester les credentials sur auth**<br>
+(powershell)> Invoke-RestMethod -Method Post -Uri "http://localhost:8000/api/token/" -ContentType "application/json" -Body '{"username":"hr","password":"altahoney64"}'
 ### FrontEnd
 #### Initialisation de React<br>
   annuaire_entreprise>npx create-react-app frontend<br>
